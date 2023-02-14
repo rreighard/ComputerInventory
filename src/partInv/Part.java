@@ -1,23 +1,23 @@
 package partInv;
-
+import java.util.UUID;
 public class Part{
-    protected int partNum;
+    protected UUID partNum;
     protected String manufacturer;
     protected String formF;
     protected String build_date;
 
-    public Part (int partNum, String formF, String manufacturer, String build_date){
-        partNum = this.partNum;
-        formF = this.formF;
-        manufacturer = this.manufacturer;
-        build_date = this.build_date;
+    public Part (UUID partNum, String formF, String manufacturer, String build_date){
+        this.partNum = partNum;
+        this.formF = formF;
+        this.manufacturer = manufacturer;
+        this.build_date = build_date;
     }
 
-    public int getpartNum(){
+    public UUID getpartNum(){
         return partNum;
     }
 
-    public void setPartNum(int nPartNum){
+    public void setPartNum(UUID nPartNum){
         partNum = nPartNum;
     }
 

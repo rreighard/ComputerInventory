@@ -1,17 +1,13 @@
 package partInv;
-
+import java.util.UUID;
 public class cpu extends Part{
-    private int partNum;
-    private String formF;
-    private String manufacturer;
-    private String build_date;
     private int core_count;
     private float clock_speed;
     private float bclock_speed;
     private float power_draw;
     private boolean int_graph;
 
-    public cpu (int partNum, String formF, String manufacturer, String build_date,
+    public cpu (UUID partNum, String formF, String manufacturer, String build_date,
                 int core_count, float clock_speed, float bclock_speed, float power_draw, boolean int_graph){
         super(partNum, formF, manufacturer, build_date);
         core_count = this.core_count;

@@ -1,16 +1,12 @@
 package partInv;
-
+import java.util.UUID;
 public class Ram extends Part{
-    private int partNum;
-    private String manufacturer;
-    private String formF;
-    private String build_date;
     private String type;
     private int speed;
     private String color;
     private float cas_latency;
 
-    public Ram (int partNum, String formF, String manufacturer, String build_date,
+    public Ram (UUID partNum, String formF, String manufacturer, String build_date,
                 String type, int speed, String color, float cas_latency){
         super(partNum, formF, manufacturer, build_date);
         type = this.type;

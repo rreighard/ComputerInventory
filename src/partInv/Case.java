@@ -1,16 +1,12 @@
 package partInv;
-
+import java.util.UUID;
 public class Case extends Part{
-    private int partNum;
-    private String manufacturer;
-    private String formF;
-    private String build_date;
     private String color;
     private boolean power_supply;
     private String side_panel;
     private int int_bay35;
 
-    public Case (int partNum, String formF, String manufacturer, String build_date,
+    public Case (UUID partNum, String formF, String manufacturer, String build_date,
                  String color, boolean power_supply, String side_panel, int int_bay35){
         super(partNum, formF, manufacturer, build_date);
         color = this.color;

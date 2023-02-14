@@ -1,22 +1,18 @@
 package partInv;
-
+import java.util.UUID;
 public class PowerSupply extends Part{
-    private int partNum;
-    private String manufacturer;
-    private String formF;
-    private String build_date;
     private String efficiency;
     private int wattage;
     private String modular;
     private String color;
 
-    public PowerSupply (int partNum, String formF, String manufacturer, String build_date, String efficiency,
+    public PowerSupply (UUID partNum, String formF, String manufacturer, String build_date, String efficiency,
                         int wattage, String modular, String color){
         super(partNum, formF, manufacturer, build_date);
-        efficiency = this.efficiency;
-        wattage = this.wattage;
-        modular = this.modular;
-        color = this.color;
+        this.efficiency = efficiency;
+        this.wattage = wattage;
+        this.modular = modular;
+        this.color = color;
     }
 
     public String getEfficiency(){

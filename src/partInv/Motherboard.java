@@ -1,25 +1,21 @@
 package partInv;
-
+import java.util.UUID;
 
 public class Motherboard extends Part{
-    private int partNum;
-    private String formF;
-    private String manufacturer;
-    private String build_date;
     private String socket;
     private int memMax;
     private int memSlots;
     private int memSpeed;
     private String color;
 
-    public Motherboard (int partNum, String formF, String manufacturer, String build_date, String socket,
+    public Motherboard (UUID partNum, String formF, String manufacturer, String build_date, String socket,
                         int memMax, int memSlots, int memSpeed, String color){
         super(partNum, formF, manufacturer, build_date);
-        socket = this.socket;
-        memMax = this.memMax;
-        memSlots = this.memSlots;
-        memSpeed = this.memSpeed;
-        color = this.color;
+        this.socket = socket;
+        this.memMax = memMax;
+        this.memSlots = memSlots;
+        this.memSpeed = memSpeed;
+        this.color = color;
 
     }
 

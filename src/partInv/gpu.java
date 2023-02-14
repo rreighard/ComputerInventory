@@ -1,17 +1,13 @@
 package partInv;
-
+import java.util.UUID;
 public class gpu extends Part{
-    private int partNum;
-    private String manufacturer;
-    private String formF;
-    private String build_date;
     private String chipset;
     private int core_count;
     private float clock_speed;
     private float bclock_speed;
     private int length;
     private String color;
-    public gpu (int partNum, String formF, String manufacturer, String build_date, String chipset
+    public gpu (UUID partNum, String formF, String manufacturer, String build_date, String chipset
             , int core_count, float clock_speed, float bclock_speed, int length, String color){
         super(partNum, formF, manufacturer, build_date);
         chipset = this.chipset;

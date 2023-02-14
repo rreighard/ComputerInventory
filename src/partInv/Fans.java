@@ -1,10 +1,6 @@
 package partInv;
-
+import java.util.UUID;
 public class Fans extends Part{
-    private int partNum;
-    private String manufacturer;
-    private String formF;
-    private String build_date;
     private int size;
     private String color;
     private String fan_speed;
@@ -12,7 +8,7 @@ public class Fans extends Part{
     private int noise;
     private boolean pwm;
 
-    public Fans (int partNum, String formF, String manufacturer, String build_date,
+    public Fans (UUID partNum, String formF, String manufacturer, String build_date,
                  int size, String color, String fan_speed, float air_flow,
                  int noise, boolean pwm){
         super(partNum, formF, manufacturer, build_date);
