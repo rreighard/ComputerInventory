@@ -15,6 +15,8 @@ public class Ram extends Part{
         this.cas_latency = cas_latency;
     }
 
+    @Override
+    public String getPartType(){ return "Ram";}
     public String getType(){
         return type;
     }

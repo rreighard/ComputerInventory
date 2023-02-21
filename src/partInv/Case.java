@@ -15,6 +15,9 @@ public class Case extends Part{
         this.int_bay35 = int_bay35;
     }
 
+
+    @Override
+    public String getPartType(){ return "Case";}
     public String getColor(){
         return color;
     }

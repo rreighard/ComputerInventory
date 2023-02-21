@@ -6,6 +6,9 @@ public class PowerSupply extends Part{
     private String modular;
     private String color;
 
+
+    @Override
+    public String getPartType(){ return "Power Supply";}
     public PowerSupply (UUID partNum, String formF, String manufacturer, String build_date, String efficiency,
                         int wattage, String modular, String color){
         super(partNum, formF, manufacturer, build_date);

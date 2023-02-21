@@ -1,6 +1,6 @@
 package partInv;
 import java.util.UUID;
-public class Part implements PartInterface{
+public class Part{
     protected UUID partNum;
     protected String manufacturer;
     protected String formF;
@@ -13,7 +13,8 @@ public class Part implements PartInterface{
         this.build_date = build_date;
     }
 
-    public UUID getpartNum(){
+    public String getPartType() {return "Part";}
+    public UUID getPartNum(){
         return partNum;
     }
 

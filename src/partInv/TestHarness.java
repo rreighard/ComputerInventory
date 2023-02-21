@@ -12,5 +12,13 @@ public class TestHarness {
         ArrayList<Part> p1 = new ArrayList();
         p1.add(c1);
         p1.add(g1);
+
+        for (int x = 0; x < p1.size();x++){
+            System.out.println(p1.get(x).getPartType());
+        }
+    }
+
+    public static void main(String args[]){
+        TestHarness test = new TestHarness();
     }
 }

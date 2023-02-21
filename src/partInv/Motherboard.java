@@ -19,6 +19,8 @@ public class Motherboard extends Part{
 
     }
 
+    @Override
+    public String getPartType(){ return "Motherboard";}
     public String getSocket(){
         return socket;
     }

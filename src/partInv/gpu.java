@@ -17,6 +17,8 @@ public class gpu extends Part{
         this.color = color;
     }
 
+    @Override
+    public String getPartType(){ return "GPU";}
     public String getChipset(){
         return chipset;
     }

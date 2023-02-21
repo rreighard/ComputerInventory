@@ -20,6 +20,8 @@ public class Fans extends Part{
         this.pwm = pwm;
     }
 
+    @Override
+    public String getPartType(){ return "Fan";}
     public int getSize(){
         return size;
     }

@@ -19,6 +19,8 @@ public class cpu extends Part{
 
     }
 
+    @Override
+    public String getPartType(){ return "CPU";}
     public int getCore_count(){
         return core_count;
     }
