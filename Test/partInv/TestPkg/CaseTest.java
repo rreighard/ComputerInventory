@@ -2,6 +2,8 @@ package partInv.TestPkg;
 
 import org.junit.jupiter.api.Test;
 import partInv.Case;
+import partInv.Ram;
+
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -26,5 +28,24 @@ class CaseTest {
         Case cs3 = new Case(UUID.randomUUID(), "Full-Size Tower", "NZXT", "January 20 2023", "White", false, "Tempered Glass", 2);
         cs3.setPower_supp(true);
         assertEquals(true, cs3.getPower_supp());
+    }
+
+    @Test
+    void setType() {
+        Ram r1 = new Ram(UUID.randomUUID(), "DDR5", "Corsair", "January 01 2023", "Memory", 5600, "White", .01F);
+        r1.setType("System Memory");
+        assertEquals("System Memory", r1.getType());
+    }
+    @Test
+    void setColor() {
+        Ram r3 = new Ram(UUID.randomUUID(), "DDR5", "Corsair", "January 01 2023", "Memory", 5600, "White", .01F);
+        r3.setColor("Black");
+        assertEquals("Black", r3.getColor());
+    }
+    @Test
+    void setSpeed(){
+        Ram r2 = new Ram(UUID.randomUUID(), "DDR5", "Corsair", "January 01 2023", "Memory", 5600, "White", .01F);
+        r2.setSpeed(6000);
+        assertEquals(6000, r2.getSpeed());
     }
 }
