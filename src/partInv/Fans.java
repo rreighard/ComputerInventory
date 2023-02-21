@@ -12,12 +12,12 @@ public class Fans extends Part{
                  int size, String color, String fan_speed, float air_flow,
                  int noise, boolean pwm){
         super(partNum, formF, manufacturer, build_date);
-        size = this.size;
-        color = this.color;
-        fan_speed = this.fan_speed;
-        air_flow = this.air_flow;
-        noise = this.noise;
-        pwm = this.pwm;
+        this.size = size;
+        this.color = color;
+        this.fan_speed = fan_speed;
+        this.air_flow = air_flow;
+        this.noise = noise;
+        this.pwm = pwm;
     }
 
     public int getSize(){

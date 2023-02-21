@@ -1,6 +1,6 @@
 package partInv;
 import java.util.UUID;
-public class Part{
+public class Part implements PartInterface{
     protected UUID partNum;
     protected String manufacturer;
     protected String formF;

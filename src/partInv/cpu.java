@@ -10,11 +10,11 @@ public class cpu extends Part{
     public cpu (UUID partNum, String formF, String manufacturer, String build_date,
                 int core_count, float clock_speed, float bclock_speed, float power_draw, boolean int_graph){
         super(partNum, formF, manufacturer, build_date);
-        core_count = this.core_count;
-        clock_speed = this.clock_speed;
-        bclock_speed = this.bclock_speed;
-        power_draw = this.power_draw;
-        int_graph = this.int_graph;
+        this.core_count = core_count;
+        this.clock_speed = clock_speed;
+        this.bclock_speed = bclock_speed;
+        this.power_draw = power_draw;
+        this.int_graph = int_graph;
 
 
     }

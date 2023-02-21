@@ -9,10 +9,10 @@ public class Ram extends Part{
     public Ram (UUID partNum, String formF, String manufacturer, String build_date,
                 String type, int speed, String color, float cas_latency){
         super(partNum, formF, manufacturer, build_date);
-        type = this.type;
-        speed = this.speed;
-        color = this.color;
-        cas_latency = this.cas_latency;
+        this.type = type;
+        this.speed = speed;
+        this.color = color;
+        this.cas_latency = cas_latency;
     }
 
     public String getType(){

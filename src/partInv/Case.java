@@ -9,10 +9,10 @@ public class Case extends Part{
     public Case (UUID partNum, String formF, String manufacturer, String build_date,
                  String color, boolean power_supply, String side_panel, int int_bay35){
         super(partNum, formF, manufacturer, build_date);
-        color = this.color;
-        power_supply = this.power_supply;
-        side_panel = this.side_panel;
-        int_bay35 = this.int_bay35;
+        this.color = color;
+        this.power_supply = power_supply;
+        this.side_panel = side_panel;
+        this.int_bay35 = int_bay35;
     }
 
     public String getColor(){
@@ -22,7 +22,7 @@ public class Case extends Part{
     public void setColor(String col){
         color = col;
     }
-    public boolean getpower_supp(){
+    public boolean getPower_supp(){
         return power_supply;
     }
 
