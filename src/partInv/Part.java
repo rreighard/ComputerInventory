@@ -1,25 +1,30 @@
 package partInv;
+import java.awt.*;
+import java.time.LocalDate;
 import java.util.UUID;
-public class Part{
+public class Part implements PartInterface{
     protected UUID partNum;
     protected String manufacturer;
     protected String formF;
-    protected String build_date;
+    protected LocalDate build_date;
+    protected Color color;
+    protected double price;
+    protected String location;
 
-    public Part (UUID partNum, String formF, String manufacturer, String build_date){
-        this.partNum = partNum;
+    public Part (String formF, String manufacturer, Color cl, double price, String location){
+        this.partNum = UUID.randomUUID();
         this.formF = formF;
         this.manufacturer = manufacturer;
-        this.build_date = build_date;
+        this.build_date = LocalDate.now();
+        this.color = cl != null ? cl : Color.BLACK;
+        this.price = price;
+        this.location = location;
+
     }
 
     public String getPartType() {return "Part";}
     public UUID getPartNum(){
         return partNum;
-    }
-
-    public void setPartNum(UUID nPartNum){
-        partNum = nPartNum;
     }
 
     public String getManufacturer(){
@@ -38,14 +43,40 @@ public class Part{
         formF = formFa;
     }
 
-    public String getBuild_date(){
+    public LocalDate getBuild_date() {
         return build_date;
     }
 
-    public void setBuild_date(String bd){
-        build_date = bd;
+    public Color getColor(){
+        return color;
     }
+
+    public void setColor(Color cs){
+        color = cs;
+    }
+
+    public double getPrice(){
+        return price;
+    }
+
+    public void setPrice(double p){
+        price = p;
+    }
+
+    public String getLocation(){
+        return location;
+    }
+
+    public void setLocation(String l){
+        location = l;
+    }
+
     public String toString(){
-        return (partNum + " " + formF + " " + manufacturer + " " + build_date);
+        return (partNum + " " + formF + " " + manufacturer + " " + build_date + " " + color + " " + price + " " + location);
+    }
+
+    @Override
+    public void movePart(String location){
+
     }
 }

@@ -1,4 +1,5 @@
 package partInv;
+import java.awt.*;
 import java.util.UUID;
 public class cpu extends Part{
     private int core_count;
@@ -7,9 +8,9 @@ public class cpu extends Part{
     private float power_draw;
     private boolean int_graph;
 
-    public cpu (UUID partNum, String formF, String manufacturer, String build_date,
-                int core_count, float clock_speed, float bclock_speed, float power_draw, boolean int_graph){
-        super(partNum, formF, manufacturer, build_date);
+    public cpu (String formF, String manufacturer, Color color, double price, String location, int core_count, float clock_speed,
+                float bclock_speed, float power_draw, boolean int_graph){
+        super(formF, manufacturer, color, price, location);
         this.core_count = core_count;
         this.clock_speed = clock_speed;
         this.bclock_speed = bclock_speed;

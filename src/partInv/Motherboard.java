@@ -1,4 +1,5 @@
 package partInv;
+import java.awt.*;
 import java.util.UUID;
 
 public class Motherboard extends Part{
@@ -6,11 +7,11 @@ public class Motherboard extends Part{
     private int memMax;
     private int memSlots;
     private int memSpeed;
-    private String color;
+    private Color color;
 
-    public Motherboard (UUID partNum, String formF, String manufacturer, String build_date, String socket,
-                        int memMax, int memSlots, int memSpeed, String color){
-        super(partNum, formF, manufacturer, build_date);
+    public Motherboard (String formF, String manufacturer, Color color, double price, String location, String socket,
+                        int memMax, int memSlots, int memSpeed){
+        super(formF, manufacturer, color, price, location);
         this.socket = socket;
         this.memMax = memMax;
         this.memSlots = memSlots;
@@ -51,14 +52,6 @@ public class Motherboard extends Part{
 
     public void setMemSpeed(int ms){
         memSpeed = ms;
-    }
-
-    public String getColor(){
-        return color;
-    }
-
-    public void setColor(String c){
-        color = c;
     }
 
     public String toString(){

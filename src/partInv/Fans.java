@@ -1,17 +1,18 @@
 package partInv;
+import java.awt.*;
 import java.util.UUID;
 public class Fans extends Part{
     private int size;
-    private String color;
+    private Color color;
     private String fan_speed;
     private float air_flow;
     private int noise;
     private boolean pwm;
 
-    public Fans (UUID partNum, String formF, String manufacturer, String build_date,
-                 int size, String color, String fan_speed, float air_flow,
+    public Fans (String formF, String manufacturer, Color color, double price, String location,
+                 int size,String fan_speed, float air_flow,
                  int noise, boolean pwm){
-        super(partNum, formF, manufacturer, build_date);
+        super(formF, manufacturer, color, price, location);
         this.size = size;
         this.color = color;
         this.fan_speed = fan_speed;
@@ -28,14 +29,6 @@ public class Fans extends Part{
 
     public void setSize(int sz){
         size = sz;
-    }
-
-    public String getColor(){
-        return color;
-    }
-
-    public void setColor(String cl){
-        color = cl;
     }
 
     public String getFan_speed(){

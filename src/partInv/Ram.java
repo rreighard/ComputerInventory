@@ -1,14 +1,15 @@
 package partInv;
+import java.awt.*;
 import java.util.UUID;
 public class Ram extends Part{
     private String type;
     private int speed;
-    private String color;
+    private Color color;
     private float cas_latency;
 
-    public Ram (UUID partNum, String formF, String manufacturer, String build_date,
-                String type, int speed, String color, float cas_latency){
-        super(partNum, formF, manufacturer, build_date);
+    public Ram (String formF, String manufacturer, Color color, double price, String location,
+                String type, int speed, float cas_latency){
+        super(formF, manufacturer, color, price, location);
         this.type = type;
         this.speed = speed;
         this.color = color;
@@ -33,11 +34,11 @@ public class Ram extends Part{
         speed = sp;
     }
 
-    public String getColor(){
+    public Color getColor(){
         return color;
     }
 
-    public void setColor(String cs){
+    public void setColor(Color cs){
         color = cs;
     }
 

@@ -1,4 +1,5 @@
 package partInv;
+import java.awt.*;
 import java.util.UUID;
 public class gpu extends Part{
     private String chipset;
@@ -6,15 +7,14 @@ public class gpu extends Part{
     private float clock_speed;
     private float bclock_speed;
     private int length;
-    private String color;
-    public gpu (UUID partNum, String formF, String manufacturer, String build_date, String chipset
-            , float clock_speed, float bclock_speed, int length, String color){
-        super(partNum, formF, manufacturer, build_date);
+    private Color color;
+    public gpu (UUID partNum, String formF, String manufacturer,  Color color, double price, String location, String chipset
+            , float clock_speed, float bclock_speed, int length){
+        super(formF, manufacturer, color, price, location);
         this.chipset = chipset;
         this.clock_speed = clock_speed;
         this.bclock_speed = bclock_speed;
         this.length = length;
-        this.color = color;
     }
 
     @Override
@@ -49,14 +49,6 @@ public class gpu extends Part{
 
     public void setLength(int l){
         length = l;
-    }
-
-    public String getColor(){
-        return color;
-    }
-
-    public void setColor(String c){
-        color = c;
     }
 
     public String toString(){

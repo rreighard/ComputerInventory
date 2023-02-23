@@ -1,14 +1,15 @@
 package partInv;
+import java.awt.*;
 import java.util.UUID;
 public class Case extends Part{
-    private String color;
+    private Color color;
     private boolean power_supply;
     private String side_panel;
     private int int_bay35;
 
-    public Case (UUID partNum, String formF, String manufacturer, String build_date,
-                 String color, boolean power_supply, String side_panel, int int_bay35){
-        super(partNum, formF, manufacturer, build_date);
+    public Case (String formF, String manufacturer, Color color, double price, String location,
+                 boolean power_supply, String side_panel, int int_bay35){
+        super(formF, manufacturer, color, price, location);
         this.color = color;
         this.power_supply = power_supply;
         this.side_panel = side_panel;
@@ -18,13 +19,6 @@ public class Case extends Part{
 
     @Override
     public String getPartType(){ return "Case";}
-    public String getColor(){
-        return color;
-    }
-
-    public void setColor(String col){
-        color = col;
-    }
     public boolean getPower_supp(){
         return power_supply;
     }
