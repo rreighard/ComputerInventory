@@ -57,4 +57,16 @@ public class Motherboard extends Part{
     public String toString(){
         return (super.toString() + " " + socket + " " + memMax + " " + memSlots + " " + memSpeed + " " + color);
     }
+
+    @Override
+    public void movePart(String l){
+        location = l;
+        System.out.println("This motherboard is now located: " + l);
+    }
+
+    @Override
+    public void applyDiscount(double d){
+        price = price * d;
+        System.out.println("The motherboard's discounted price is: " + price);
+    }
 }

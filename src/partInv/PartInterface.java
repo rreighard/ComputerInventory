@@ -1,5 +1,7 @@
 package partInv;
 
 public interface PartInterface {
-    void movePart(String location);
+    void movePart(String l);
+
+    void applyDiscount(double p);
 }

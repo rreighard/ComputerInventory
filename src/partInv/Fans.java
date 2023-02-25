@@ -67,4 +67,16 @@ public class Fans extends Part{
         return (super.toString() + " " + size + " " + color + " " + fan_speed + " " +
                 air_flow + " " + noise + " " + pwm);
     }
+
+    @Override
+    public void movePart(String l){
+        location = l;
+        System.out.println("This fan is now located: " + l);
+    }
+
+    @Override
+    public void applyDiscount(double d){
+        price = price * d;
+        System.out.println("The fan's discounted price is: " + price);
+    }
 }

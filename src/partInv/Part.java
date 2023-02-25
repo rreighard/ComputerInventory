@@ -76,7 +76,14 @@ public class Part implements PartInterface{
     }
 
     @Override
-    public void movePart(String location){
+    public void movePart(String l){
+        location = l;
+        System.out.println("This Part is now located: " + l);
+    }
 
+    @Override
+    public void applyDiscount(double d){
+        price = price * d;
+        System.out.println("The " + this.getPartType() + "'s discount price: " + price);
     }
 }

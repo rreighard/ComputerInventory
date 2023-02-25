@@ -46,4 +46,17 @@ public class PowerSupply extends Part{
     public String toString(){
         return (super.toString() + " " + efficiency + " " + wattage + " " + modular + " " + color);
     }
+
+    @Override
+    public void movePart(String l){
+        location = l;
+        System.out.println("This power supply is now located: " + l);
+    }
+
+    @Override
+    public void applyDiscount(double d){
+        price = price * d;
+        System.out.println("The power supply's discounted price is: " + price);
+    }
+
 }

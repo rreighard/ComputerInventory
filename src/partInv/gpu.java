@@ -8,7 +8,7 @@ public class gpu extends Part{
     private float bclock_speed;
     private int length;
     private Color color;
-    public gpu (UUID partNum, String formF, String manufacturer,  Color color, double price, String location, String chipset
+    public gpu (String formF, String manufacturer,  Color color, double price, String location, String chipset
             , float clock_speed, float bclock_speed, int length){
         super(formF, manufacturer, color, price, location);
         this.chipset = chipset;
@@ -55,4 +55,16 @@ public class gpu extends Part{
         return (super.toString() +  " " + chipset +  " "  + clock_speed
                 +  " " + bclock_speed + " " + length + " " + color);
     }
+    @Override
+    public void movePart(String l){
+        location = l;
+        System.out.println("This GPU is now located: " + l);
+    }
+
+    @Override
+    public void applyDiscount(double d){
+        price = price * d;
+        System.out.println("The GPU's discount price: " + price);
+    }
+
 }

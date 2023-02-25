@@ -1,21 +1,20 @@
 package partInv;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner.*;
 import java.util.UUID;
 public class TestHarness {
 
     public TestHarness() {
-        cpu c1 = new cpu(UUID.randomUUID(), "AM4", "AMD", "Jan 20 2023", 8, 3.4F, 4.6F, 140, false);
-        gpu g1 = new gpu(UUID.randomUUID(), "GeForce RTX 4080", "MSi", "Jan 18 2023", "GDDR6", 4.3F, 5.7F, 320, "Black");
+        cpu c1 = new cpu("AM4", "AMD", Color.BLACK, 499.99, "Shelf 1A", 8, 3.4F, 4.6F, 140, false);
+        gpu g1 = new gpu("GeForce RTX 4080", "MSi", Color.BLACK, 3450.99, "Shelf 2A", "GDDR6", 4.3F, 5.7F, 320);
 
-        ArrayList<Part> p1 = new ArrayList();
-        p1.add(c1);
-        p1.add(g1);
+        c1.movePart("Shelf 2A");
+        c1.applyDiscount(.75);
+        g1.movePart("Shelf 1A");
+        g1.applyDiscount(.80);
 
-        for (int x = 0; x < p1.size();x++){
-            System.out.println(p1.get(x).getPartType());
-        }
     }
 
     public static void main(String args[]){

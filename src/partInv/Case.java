@@ -46,4 +46,16 @@ public class Case extends Part{
     public String toString(){
         return (super.toString() + " " + color + " " + power_supply + " " + side_panel + " " + int_bay35);
     }
+
+    @Override
+    public void movePart(String l){
+        location = l;
+        System.out.println("This case is now located: " + l);
+    }
+
+    @Override
+    public void applyDiscount(double d){
+        price = price * d;
+        System.out.println("The case's discounted price is: " + price);
+    }
 }

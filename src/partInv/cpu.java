@@ -66,4 +66,17 @@ public class cpu extends Part{
         return(super.toString() + " " + core_count + " " + clock_speed + " " + bclock_speed
                 + " " + power_draw + " " + int_graph);
     }
+
+    @Override
+    public void movePart(String l){
+        location = l;
+        System.out.println("This CPU is now located: " + l);
+    }
+
+    @Override
+    public void applyDiscount(double d){
+        price = price * d;
+        System.out.println("The CPU's discounted price is: " + price);
+    }
+
 }

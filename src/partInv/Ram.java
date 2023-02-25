@@ -54,4 +54,16 @@ public class Ram extends Part{
         return (super.toString() + " " + type + " " + speed + " " + color
         + " " + cas_latency);
     }
+    @Override
+    public void movePart(String l){
+        location = l;
+        System.out.println("This ram is now located: " + l);
+    }
+
+    @Override
+    public void applyDiscount(double d){
+        price = price * d;
+        System.out.println("The ram's discounted price is: " + price);
+    }
+
 }
