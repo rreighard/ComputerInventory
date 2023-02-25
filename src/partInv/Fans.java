@@ -77,6 +77,6 @@ public class Fans extends Part{
     @Override
     public void applyDiscount(double d){
         price = price * d;
-        System.out.println("The fan's discounted price is: " + price);
+        System.out.println("The fan's discounted price is: " + String.format("%.2f", price));
     }
 }

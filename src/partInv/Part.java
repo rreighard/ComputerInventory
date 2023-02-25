@@ -84,6 +84,6 @@ public class Part implements PartInterface{
     @Override
     public void applyDiscount(double d){
         price = price * d;
-        System.out.println("The " + this.getPartType() + "'s discount price: " + price);
+        System.out.println("The part's discount price: " + String.format("%.2f", price));
     }
 }

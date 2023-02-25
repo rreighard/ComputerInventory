@@ -64,7 +64,7 @@ public class gpu extends Part{
     @Override
     public void applyDiscount(double d){
         price = price * d;
-        System.out.println("The GPU's discount price: " + price);
+        System.out.println("The GPU's discount price: " + String.format("%.2f", price));
     }
 
 }

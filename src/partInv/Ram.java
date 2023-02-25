@@ -63,7 +63,7 @@ public class Ram extends Part{
     @Override
     public void applyDiscount(double d){
         price = price * d;
-        System.out.println("The ram's discounted price is: " + price);
+        System.out.println("The ram's discounted price is: " + String.format("%.2f", price));
     }
 
 }

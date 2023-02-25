@@ -76,7 +76,7 @@ public class cpu extends Part{
     @Override
     public void applyDiscount(double d){
         price = price * d;
-        System.out.println("The CPU's discounted price is: " + price);
+        System.out.println("The CPU's discounted price is: " + String.format("%.2f", price));
     }
 
 }
