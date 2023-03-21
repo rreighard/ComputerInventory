@@ -30,8 +30,8 @@ public class Inventory {
         }
         return n;
     }
-    public void addToHMap(Object o){
-        String c = String.valueOf(o.getClass());
+    public void addToHMap(Part o){
+        String c = o.getPartType();
 
         int count = 1;
         for(String x: partHashMap.keySet()){
@@ -39,16 +39,26 @@ public class Inventory {
                 count += 1;
             }
         }
-        c.concat(Integer.toString(count));
+        c += Integer.toString(count);
         partHashMap.put(c, o);
     }
 
     public void removeFromHMap(String inst){
         if(partHashMap.containsKey(inst)){
             partHashMap.remove(inst);
+            System.out.println("remove success");
         }
         else{
             System.out.println("Not Found");
         }
+    }
+
+    public String toString(){
+
+        String ts = "";
+         for (String i : partHashMap.keySet()){
+             ts += "Key: " + i + " val: " + partHashMap.get(i) + "\n";
+         }
+        return ts;
     }
 }
