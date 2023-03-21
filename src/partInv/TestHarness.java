@@ -29,7 +29,7 @@ public class TestHarness {
         inv.display("GPU1");
         inv.display("GPU2");
         inv.removeFromHMap("CPU1");
-        System.out.println(inv);
+        System.out.println(inv.toString());
 
     }
 
