@@ -2,14 +2,16 @@ package partInv;
 import java.awt.*;
 import java.util.UUID;
 public class Case extends Part{
+    private String name;
     private Color color;
     private boolean power_supply;
     private String side_panel;
     private int int_bay35;
 
-    public Case (String formF, String manufacturer, Color color, double price, String location,
+    public Case (String formF, String manufacturer, Color color, double price, String location, String name,
                  boolean power_supply, String side_panel, int int_bay35){
         super(formF, manufacturer, color, price, location);
+        this.name = name;
         this.color = color;
         this.power_supply = power_supply;
         this.side_panel = side_panel;
@@ -19,6 +21,11 @@ public class Case extends Part{
 
     @Override
     public String getPartType(){ return "Case";}
+
+    public String getName() { return name;}
+
+    public void setName(String n) { name = n;}
+
     public boolean getPower_supp(){
         return power_supply;
     }

@@ -2,15 +2,17 @@ package partInv;
 import java.awt.*;
 import java.util.UUID;
 public class cpu extends Part{
+    private String name;
     private int core_count;
     private float clock_speed;
     private float bclock_speed;
     private float power_draw;
     private boolean int_graph;
 
-    public cpu (String formF, String manufacturer, Color color, double price, String location, int core_count, float clock_speed,
+    public cpu (String formF, String manufacturer, Color color, double price, String location, String name, int core_count, float clock_speed,
                 float bclock_speed, float power_draw, boolean int_graph){
         super(formF, manufacturer, color, price, location);
+        this.name = name;
         this.core_count = core_count;
         this.clock_speed = clock_speed;
         this.bclock_speed = bclock_speed;
@@ -22,6 +24,11 @@ public class cpu extends Part{
 
     @Override
     public String getPartType(){ return "CPU";}
+
+    public String getName() { return name;}
+
+    public void setName(String n) { name = n;}
+
     public int getCore_count(){
         return core_count;
     }

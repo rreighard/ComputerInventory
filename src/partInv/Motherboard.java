@@ -3,15 +3,17 @@ import java.awt.*;
 import java.util.UUID;
 
 public class Motherboard extends Part{
+    private String name;
     private String socket;
     private int memMax;
     private int memSlots;
     private int memSpeed;
     private Color color;
 
-    public Motherboard (String formF, String manufacturer, Color color, double price, String location, String socket,
+    public Motherboard (String formF, String manufacturer, Color color, double price, String location, String name, String socket,
                         int memMax, int memSlots, int memSpeed){
         super(formF, manufacturer, color, price, location);
+        this.name = name;
         this.socket = socket;
         this.memMax = memMax;
         this.memSlots = memSlots;
@@ -22,6 +24,11 @@ public class Motherboard extends Part{
 
     @Override
     public String getPartType(){ return "Motherboard";}
+
+    public String getName() { return name;}
+
+    public void setName(String n) { name = n;}
+
     public String getSocket(){
         return socket;
     }
