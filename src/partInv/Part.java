@@ -72,7 +72,8 @@ public class Part implements PartInterface{
     }
 
     public String toString(){
-        return (partNum + " " + formF + " " + manufacturer + " " + build_date + " " + color + " " + price + " " + location);
+        return ("Part number: " + partNum + "\nForm factor: " + formF + "\nManufacturer: "
+                + manufacturer + "\nBuild date: " + build_date + "\nColor: " + color + "\nPrice: " + price + "\nLocation: " + location);
     }
 
     @Override

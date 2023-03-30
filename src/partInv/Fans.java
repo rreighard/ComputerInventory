@@ -71,8 +71,8 @@ public class Fans extends Part{
     }
 
     public String toString(){
-        return (super.toString() + " " + size + " " + color + " " + fan_speed + " " +
-                air_flow + " " + noise + " " + pwm);
+        return (super.toString() + "\nSize: " + size + "\nColor" + color + "\nFan speed: " + fan_speed + "\nAir flow: " +
+                air_flow + "\nNoise: " + noise + "\nPWM: " + pwm);
     }
 
     @Override

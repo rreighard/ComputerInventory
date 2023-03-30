@@ -51,7 +51,7 @@ public class Case extends Part{
     }
 
     public String toString(){
-        return (super.toString() + " " + color + " " + power_supply + " " + side_panel + " " + int_bay35);
+        return (super.toString() + "\nColor: " + color + "\nInt Power Supply: " + power_supply + "\nSide Panel: " + side_panel + "\nInt Bays: " + int_bay35);
     }
 
     @Override

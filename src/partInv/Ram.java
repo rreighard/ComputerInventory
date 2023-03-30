@@ -58,8 +58,8 @@ public class Ram extends Part{
     }
 
     public String toString(){
-        return (super.toString() + " " + type + " " + speed + " " + color
-        + " " + cas_latency);
+        return (super.toString() + "\nType: " + type + "\nSpeed: " + speed + "\nColor: " + color
+        + "\nCAS latency: " + cas_latency);
     }
     @Override
     public void movePart(String l){

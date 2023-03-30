@@ -2,6 +2,7 @@ package partInv;
 
 import java.awt.*;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Inventory {
     private HashMap<String, Object> partHashMap;
@@ -60,5 +61,24 @@ public class Inventory {
              ts += "Key: " + i + " val: " + partHashMap.get(i) + "\n";
          }
         return ts;
+    }
+
+    public String logsToString(){
+        int count = 0;
+        String lts = "";
+        for (String i : partHashMap.keySet()){
+            lts += "Key: " + i + " val: " + partHashMap.get(i) + "\n";
+            count ++;
+            if (count == 4){
+                break;
+            }
+        }
+        return lts;
+    }
+
+    public String getFirst(){
+        Map.Entry<String, Object> firstEntry = partHashMap.entrySet().iterator().next();
+        String getF = firstEntry.getKey();
+        return getF;
     }
 }

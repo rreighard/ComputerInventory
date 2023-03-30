@@ -59,8 +59,8 @@ public class gpu extends Part{
     }
 
     public String toString(){
-        return (super.toString() +  " " + chipset +  " "  + clock_speed
-                +  " " + bclock_speed + " " + length + " " + color);
+        return (super.toString() +  "\nChipset: " + chipset +  "\nClock speed: "  + clock_speed
+                +  "\nBoost clock speed:  " + bclock_speed + "\nLength: " + length + "\nColor: " + color);
     }
     @Override
     public void movePart(String l){
