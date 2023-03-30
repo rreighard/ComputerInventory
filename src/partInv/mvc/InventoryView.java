@@ -4,5 +4,8 @@ import javax.swing.*;
 
 public class InventoryView {
     private JPanel bckgnd;
-    private JTextArea textArea1;
+    private JTextArea logArea;
+    private JButton editBtn;
+    private JButton viewIndividualBtn;
+    private JButton viewFullBtn;
 }
