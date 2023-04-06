@@ -2,7 +2,6 @@ package partInv;
 import java.awt.*;
 import java.util.UUID;
 public class gpu extends Part{
-    private String name;
     private String chipset;
     private int core_count;
     private float clock_speed;
@@ -11,8 +10,7 @@ public class gpu extends Part{
     private Color color;
     public gpu (String formF, String manufacturer,  Color color, double price, String location, String name, String chipset
             , float clock_speed, float bclock_speed, int length){
-        super(formF, manufacturer, color, price, location);
-        this.name = name;
+        super(formF, manufacturer, color, price, location, name);
         this.chipset = chipset;
         this.clock_speed = clock_speed;
         this.bclock_speed = bclock_speed;
@@ -21,10 +19,6 @@ public class gpu extends Part{
 
     @Override
     public String getPartType(){ return "GPU";}
-
-    public String getName() { return name;}
-
-    public void setName(String n) { name = n;}
 
     public String getChipset(){
         return chipset;

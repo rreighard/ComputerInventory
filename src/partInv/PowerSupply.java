@@ -2,28 +2,19 @@ package partInv;
 import java.awt.*;
 import java.util.UUID;
 public class PowerSupply extends Part{
-    private String name;
     private String efficiency;
     private int wattage;
     private String modular;
-    private Color color;
-
 
     @Override
     public String getPartType(){ return "Power Supply";}
     public PowerSupply (String formF, String manufacturer, Color color, double price, String location, String name, String efficiency,
                         int wattage, String modular){
-        super(formF, manufacturer, color, price, location);
-        this.name = name;
+        super(formF, manufacturer, color, price, location, name);
         this.efficiency = efficiency;
         this.wattage = wattage;
         this.modular = modular;
-        this.color = color;
     }
-
-    public String getName() { return name;}
-
-    public void setName(String n) { name = n;}
 
     public String getEfficiency(){
         return efficiency;

@@ -2,28 +2,20 @@ package partInv;
 import java.awt.*;
 import java.util.UUID;
 public class Ram extends Part{
-    private String name;
     private String type;
     private int speed;
-    private Color color;
     private float cas_latency;
 
     public Ram (String formF, String manufacturer, Color color, double price, String location, String name,
                 String type, int speed, float cas_latency){
-        super(formF, manufacturer, color, price, location);
-        this.name = name;
+        super(formF, manufacturer, color, price, location, name);
         this.type = type;
         this.speed = speed;
-        this.color = color;
         this.cas_latency = cas_latency;
     }
 
     @Override
     public String getPartType(){ return "Ram";}
-
-    public String getName() { return name;}
-
-    public void setName(String n) { name = n;}
 
     public String getType(){
         return type;
@@ -39,14 +31,6 @@ public class Ram extends Part{
 
     public void setSpeed(int sp){
         speed = sp;
-    }
-
-    public Color getColor(){
-        return color;
-    }
-
-    public void setColor(Color cs){
-        color = cs;
     }
 
     public float getCas_latency(){

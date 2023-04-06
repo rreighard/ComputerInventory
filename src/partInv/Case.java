@@ -22,10 +22,6 @@ public class Case extends Part{
     @Override
     public String getPartType(){ return "Case";}
 
-    public String getName() { return name;}
-
-    public void setName(String n) { name = n;}
-
     public boolean getPower_supp(){
         return power_supply;
     }

@@ -10,8 +10,9 @@ public class Part implements PartInterface{
     protected Color color;
     protected double price;
     protected String location;
+    protected String name;
 
-    public Part (String formF, String manufacturer, Color cl, double price, String location){
+    public Part (String formF, String manufacturer, Color cl, double price, String location, String name){
         this.partNum = UUID.randomUUID();
         this.formF = formF;
         this.manufacturer = manufacturer;
@@ -19,7 +20,16 @@ public class Part implements PartInterface{
         this.color = cl != null ? cl : Color.BLACK;
         this.price = price;
         this.location = location;
+        this.name = name;
 
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPartType() {return "Part";}
@@ -73,7 +83,8 @@ public class Part implements PartInterface{
 
     public String toString(){
         return ("Part number: " + partNum + "\nForm factor: " + formF + "\nManufacturer: "
-                + manufacturer + "\nBuild date: " + build_date + "\nColor: " + color + "\nPrice: " + price + "\nLocation: " + location);
+                + manufacturer + "\nBuild date: " + build_date + "\nColor: " + color + "\nPrice: " + price + "\nLocation: " + location
+                + "\nName: " + name);
     }
 
     @Override

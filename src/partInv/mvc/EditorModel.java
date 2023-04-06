@@ -14,12 +14,12 @@ public class EditorModel {
     private String infoToChange;
     private String desiredChange;
 
-    public EditorModel(String iTC, String dC){
+    public EditorModel(String iTC, String dC{
         infoToChange = iTC;
         desiredChange = dC;
     }
 
-    public void makeChange(String iTC, String dC){
+    public void makeChange(String iTC, String dC, Inventory inv){
 
     }
 }

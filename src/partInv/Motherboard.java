@@ -3,7 +3,6 @@ import java.awt.*;
 import java.util.UUID;
 
 public class Motherboard extends Part{
-    private String name;
     private String socket;
     private int memMax;
     private int memSlots;
@@ -12,14 +11,11 @@ public class Motherboard extends Part{
 
     public Motherboard (String formF, String manufacturer, Color color, double price, String location, String name, String socket,
                         int memMax, int memSlots, int memSpeed){
-        super(formF, manufacturer, color, price, location);
-        this.name = name;
+        super(formF, manufacturer, color, price, location, name);
         this.socket = socket;
         this.memMax = memMax;
         this.memSlots = memSlots;
         this.memSpeed = memSpeed;
-        this.color = color;
-
     }
 
     @Override

@@ -12,6 +12,21 @@ public class InventoryFormEdit {
     private JButton viewIndividual;
     private JTextField DesiredChange;
     private JTextField infoToChangeTextField;
+    private JButton prevBtn;
+    private JButton nextBtn;
+    private JButton quitBtn;
+
+    public JButton getPrevBtn() {
+        return prevBtn;
+    }
+
+    public JButton getNextBtn() {
+        return nextBtn;
+    }
+
+    public JButton getQuitBtn() {
+        return quitBtn;
+    }
 
     public JTextField getInfoToChangeTextField() {
         return infoToChangeTextField;
