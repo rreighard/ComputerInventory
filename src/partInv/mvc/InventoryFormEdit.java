@@ -17,6 +17,8 @@ public class InventoryFormEdit {
     private JButton prevBtn;
     private JButton nextBtn;
     private JButton quitBtn;
+    private JButton addBtn;
+    private JButton deleteBtn;
 
     public JButton getPrevBtn() {
         return prevBtn;
@@ -99,6 +101,14 @@ public class InventoryFormEdit {
 
     public void setInfoToChangeTextField(JTextField infoToChangeTextField) {
         this.infoToChangeTextField = infoToChangeTextField;
+    }
+
+    public JButton getAddBtn() {
+        return addBtn;
+    }
+
+    public JButton getDeleteBtn() {
+        return deleteBtn;
     }
 
     public void setPrevBtn(JButton prevBtn) {

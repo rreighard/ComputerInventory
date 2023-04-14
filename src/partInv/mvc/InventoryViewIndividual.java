@@ -11,7 +11,7 @@ public InventoryViewIndividual(){
         JPanel content = invFormIndividual.getIndividualPage();
         this.setContentPane(content);
         this.pack();
-        this.setTitle("Inventory: Main Page");
+        this.setTitle("Inventory: Individual Page");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         }
 

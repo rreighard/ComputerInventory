@@ -18,8 +18,9 @@ public class InventoryApp {
         String logs = "";
         List<String> keys = new ArrayList<>();
 
+        InventoryAdd invAdd = new InventoryAdd();
         RecentLogModel recentLogModel = new RecentLogModel(logs);
-        EditorModel editorModel = new EditorModel(infoToChange, desiredChange);
+        EditorModel editModel = new EditorModel();
         InventoryView view = new InventoryView();
         InventoryViewEdit viewEdit = new InventoryViewEdit();
         InventoryViewFull viewFull = new InventoryViewFull();
@@ -38,7 +39,7 @@ public class InventoryApp {
                 "GeForce RTX 4070 Ti", 2310F, 2640F, 305));
         keys.add("GPU1");
 
-        InventoryController controller = new InventoryController(viewEdit, view, viewFull, viewIndividual, recentLogModel, inv, currentKey, keys);
+        InventoryController controller = new InventoryController(viewEdit, view, viewFull, viewIndividual, recentLogModel, editModel, invAdd, inv, currentKey, keys);
 
         currentKey = keys.get(controller.getCurrentKey());
         System.out.println(keys);

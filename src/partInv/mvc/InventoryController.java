@@ -12,18 +12,22 @@ public class InventoryController {
     private InventoryView view;
     private InventoryViewFull viewFull;
     private InventoryViewIndividual viewIndividual;
+    private InventoryAdd invAdd;
     private RecentLogModel recLogModel;
+    private EditorModel editModel;
     private List<String> invList;
     private String curKey;
     private int num;
 
-    public InventoryController(InventoryViewEdit viewEdit, InventoryView view, InventoryViewFull viewFull, InventoryViewIndividual viewIndividual, RecentLogModel recLogModel,
+    public InventoryController(InventoryViewEdit viewEdit, InventoryView view, InventoryViewFull viewFull, InventoryViewIndividual viewIndividual, RecentLogModel recLogModel, EditorModel editModel, InventoryAdd invAdd,
                                Inventory inv, String curKey, List<String> invList) {
         this.viewEdit = viewEdit;
         this.view = view;
         this.viewFull = viewFull;
         this.viewIndividual = viewIndividual;
         this.recLogModel = recLogModel;
+        this.editModel = editModel;
+        this.invAdd = invAdd;
         this.invList = invList;
         this.curKey = curKey;
         this.num = num;
@@ -82,6 +86,23 @@ public class InventoryController {
         viewEdit.invFormEdit().getViewIndividual().addActionListener(a -> {
             viewEdit.setVisible(false);
             viewIndividual.setVisible(true);
+        });
+
+        viewEdit.invFormEdit().getDeleteBtn().addActionListener(a -> {
+            inv.removeFromHMap(curKey);
+            invList.remove(invList.indexOf(curKey));
+        });
+
+        viewEdit.invFormEdit().getAddBtn().addActionListener(a -> {
+            invAdd.setVisible(true);
+        });
+
+        invAdd.invAddForm().getAddPartBtn().addActionListener(a -> {
+            editModel.makeChange(inv, invAdd.invAddForm().getPartTypeFld().getText(), invAdd.invAddForm().getA1Fld().getText(), invAdd.invAddForm().getA2Fld().getText(),
+                    invAdd.invAddForm().getA3Fld().getText(), invAdd.invAddForm().getA4Fld().getText(), invAdd.invAddForm().getA5Fld().getText(),
+                    invAdd.invAddForm().getA6Fld().getText(), invAdd.invAddForm().getA7Fld().getText(), invAdd.invAddForm().getA8Fld().getText(),
+                    invAdd.invAddForm().getA9Fld().getText(), invAdd.invAddForm().getA10Fld().getText(), invAdd.invAddForm().getA11Fld().getText());
+            invAdd.setVisible(false);
         });
 
         viewIndividual.invFormIndividual().getPartInfo().setText(inv.display(curKey));
