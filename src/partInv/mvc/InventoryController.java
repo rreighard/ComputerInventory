@@ -50,17 +50,18 @@ public class InventoryController {
 
         viewEdit.invFormEdit().getConfirmChange().addActionListener(a -> {
             inv.editPartHashMap(viewEdit.invFormEdit().getInfoToChangeTextField().getText(), viewEdit.invFormEdit().getDesiredChange().getText(), curKey);
-            viewEdit.invFormEdit().getInfoArea();
+            viewEdit.invFormEdit().getInfoArea().setText(inv.display(curKey));
         });
 
         viewEdit.invFormEdit().getNextBtn().addActionListener(a -> {
-            num = invList.indexOf(this.curKey) + 1 % (invList.size() -1);
+            num = (invList.indexOf(this.curKey) + 1) % invList.size();
             this.curKey = invList.get(num);
             viewEdit.invFormEdit().parseInvEditForm(inv, invList.get(num));
         });
 
         viewEdit.invFormEdit().getPrevBtn().addActionListener(a -> {
-            num = invList.indexOf(this.curKey) - 1 < 0 ? (invList.size() -1) : invList.indexOf(this.curKey);
+            num = (invList.indexOf(this.curKey) - 1) < 0 ? invList.size() -1 : this.num -1;
+            this.curKey = invList.get(num);
             viewEdit.invFormEdit().parseInvEditForm(inv, invList.get(num));
         });
 
@@ -86,13 +87,14 @@ public class InventoryController {
         viewIndividual.invFormIndividual().getPartInfo().setText(inv.display(curKey));
 
         viewIndividual.invFormIndividual().getNextBtnInd().addActionListener(a -> {
-            num =invList.indexOf(this.curKey) +1 % (invList.size()-1);
+            num = (invList.indexOf(this.curKey) + 1) % invList.size();
             this.curKey = invList.get(num);
             viewEdit.invFormEdit().parseInvEditForm(inv, invList.get(num));
         });
 
         viewIndividual.invFormIndividual().getPrevBtnInd().addActionListener(a -> {
-            num = invList.indexOf(this.curKey) - 1 < 0 ? invList.size() -1 : invList.indexOf(this.curKey) - 1 ;
+            num = (invList.indexOf(this.curKey) - 1) < 0 ? invList.size() -1 : this.num - 1;
+            this.curKey = invList.get(num);
             viewIndividual.invFormIndividual().parseInvIndForm(inv, invList.get(num));
         });
 
@@ -142,7 +144,7 @@ public class InventoryController {
             String temp = "";
             if(!info.isEmpty()) {
                 for (String x : invList) {
-                    for (int y = 0; y < 7; y++) {
+                    for (int y = 0; y < info.size(); y++) {
                         if (x.contains(info.get(y))) {
                             temp += inv.display(x) + "\n";
                         }
