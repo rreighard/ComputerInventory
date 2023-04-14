@@ -11,8 +11,8 @@ public class RecentLogModel {
 
     public String getRecLogs() { return recLogs; }
 
-    public void setRecLogs(Inventory inv, String recLogs){
+    public void setRecLogs(Inventory inv){
 
-        recLogs = inv.logsToString().replace("\n", " || ");
+        recLogs = inv.logsToString();
     }
 }

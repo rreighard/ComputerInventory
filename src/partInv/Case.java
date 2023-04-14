@@ -10,8 +10,7 @@ public class Case extends Part{
 
     public Case (String formF, String manufacturer, Color color, double price, String location, String name,
                  boolean power_supply, String side_panel, int int_bay35){
-        super(formF, manufacturer, color, price, location);
-        this.name = name;
+        super(formF, manufacturer, color, price, location, name);
         this.color = color;
         this.power_supply = power_supply;
         this.side_panel = side_panel;
@@ -47,7 +46,7 @@ public class Case extends Part{
     }
 
     public String toString(){
-        return (super.toString() + "\nColor: " + color + "\nInt Power Supply: " + power_supply + "\nSide Panel: " + side_panel + "\nInt Bays: " + int_bay35);
+        return (super.toString() + "\nInt Power Supply: " + power_supply + " || Side Panel: " + side_panel + " ||Int Bays: " + int_bay35 + "\n");
     }
 
     @Override

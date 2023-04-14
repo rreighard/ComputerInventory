@@ -1,5 +1,7 @@
 package partInv.mvc;
 
+import partInv.Inventory;
+
 import javax.swing.*;
 
 public class InventoryFormIndividual {
@@ -10,6 +12,23 @@ public class InventoryFormIndividual {
     private JButton mainPage;
     private JButton editPage;
     private JPanel individualPage;
+    private JButton nextBtnInd;
+    private JButton quitBtnInd;
+    private JButton prevBtnInd;
+
+
+
+    public JButton getNextBtnInd() {
+        return nextBtnInd;
+    }
+
+    public JButton getQuitBtnInd() {
+        return quitBtnInd;
+    }
+
+    public JButton getPrevBtnInd() {
+        return prevBtnInd;
+    }
 
     public JPanel getIndividualPage() {
         return individualPage;
@@ -37,5 +56,9 @@ public class InventoryFormIndividual {
 
     public JButton getEditPage() {
         return editPage;
+    }
+
+    public void parseInvIndForm(Inventory inv, String key) {
+        this.partInfo.setText(inv.display(key));
     }
 }

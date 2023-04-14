@@ -14,9 +14,15 @@ public class InventoryFormFull {
     private JButton mainPageBtn;
     private JButton editPageBtn;
     private JButton viewIndividualBtn;
+    private JTextArea infoTextArea;
+    private JButton applyFilterBtn;
 
     public JPanel getFullPage() {
         return fullPage;
+    }
+
+    public JTextArea getInfoTextArea() {
+        return infoTextArea;
     }
 
     public JRadioButton getPowerSupplyFilterBtn() {
@@ -57,5 +63,9 @@ public class InventoryFormFull {
 
     public JButton getViewIndividualBtn() {
         return viewIndividualBtn;
+    }
+
+    public JButton getApplyFilterBtn() {
+        return applyFilterBtn;
     }
 }

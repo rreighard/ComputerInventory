@@ -65,8 +65,8 @@ public class cpu extends Part{
     }
 
     public String toString(){
-        return(super.toString() + "\nCore count: " + core_count + "\nClock speed: " + clock_speed + "\nBoost clock speed: " + bclock_speed
-                + "\nPower draw: " + power_draw + "\nIntegrated Graphics: " + int_graph);
+        return(super.toString() + "\nCore count: " + core_count + " || Clock speed: " + clock_speed + " || Boost clock speed: " + bclock_speed
+                + " || Power draw: " + power_draw + "\nIntegrated Graphics: " + int_graph + "\n");
     }
 
     @Override

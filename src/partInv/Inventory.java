@@ -1,8 +1,10 @@
 package partInv;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
 
 public class Inventory {
     private HashMap<String, Object> partHashMap;
@@ -527,13 +529,13 @@ public class Inventory {
         }
     }
 
-    public List getKeySet(String key){
-        List keys = new List();
-        partHashMap.forEach((k,value) -> {
-            keys.add(k);
-        });
-        return keys;
-    }
+//    public List getKeySet(){
+//        List<String> keys = new ArrayList<>();
+//        partHashMap.forEach((k,value) -> {
+//            keys.add(k);
+//        });
+//        return keys;
+//    }
 
     public String search(String term){
         if(partHashMap.containsKey(term)){
@@ -546,13 +548,14 @@ public class Inventory {
     }
 
     public String display(String n){
+        String text = "";
         if(partHashMap.containsKey(n)){
-            System.out.println(partHashMap.get(n));
+            text = (partHashMap.get(n).toString());
         }
         else{
             System.out.println("Not Found");
         }
-        return n;
+        return text;
     }
     public void addToHMap(Part o){
         String c = o.getPartType();

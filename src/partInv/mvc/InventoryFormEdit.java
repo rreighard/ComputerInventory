@@ -1,5 +1,7 @@
 package partInv.mvc;
 
+import partInv.Inventory;
+
 import javax.swing.*;
 
 public class InventoryFormEdit {
@@ -61,5 +63,57 @@ public class InventoryFormEdit {
 
     public JTextField getDesiredChange() {
         return DesiredChange;
+    }
+
+    public void setEditPage(JPanel editPage) {
+        this.editPage = editPage;
+    }
+
+    public void setInfoArea(JTextArea infoArea) {
+        this.infoArea = infoArea;
+    }
+
+    public void setPicturePane(JTextPane picturePane) {
+        this.picturePane = picturePane;
+    }
+
+    public void setMainPage(JButton mainPage) {
+        this.mainPage = mainPage;
+    }
+
+    public void setConfirmChange(JButton confirmChange) {
+        this.confirmChange = confirmChange;
+    }
+
+    public void setViewFull(JButton viewFull) {
+        this.viewFull = viewFull;
+    }
+
+    public void setViewIndividual(JButton viewIndividual) {
+        this.viewIndividual = viewIndividual;
+    }
+
+    public void setDesiredChange(JTextField desiredChange) {
+        DesiredChange = desiredChange;
+    }
+
+    public void setInfoToChangeTextField(JTextField infoToChangeTextField) {
+        this.infoToChangeTextField = infoToChangeTextField;
+    }
+
+    public void setPrevBtn(JButton prevBtn) {
+        this.prevBtn = prevBtn;
+    }
+
+    public void setNextBtn(JButton nextBtn) {
+        this.nextBtn = nextBtn;
+    }
+
+    public void setQuitBtn(JButton quitBtn) {
+        this.quitBtn = quitBtn;
+    }
+
+    public void parseInvEditForm(Inventory inv, String key){
+        this.infoArea.setText(inv.display(key));
     }
 }

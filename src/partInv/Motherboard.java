@@ -58,7 +58,7 @@ public class Motherboard extends Part{
     }
 
     public String toString(){
-        return (super.toString() + "\nSocket: " + socket + "\nMax Memory:  " + memMax + " \nMemory slots: " + memSlots + "\nMemory speed: " + memSpeed + "\nColor: " + color);
+        return (super.toString() + "\nSocket: " + socket + " || Max Memory:  " + memMax + " || Memory slots: " + memSlots + " || Memory speed: " + memSpeed + "\n");
     }
 
     @Override

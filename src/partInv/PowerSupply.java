@@ -41,7 +41,7 @@ public class PowerSupply extends Part{
     }
 
     public String toString(){
-        return (super.toString() + "\nEfficiency: " + efficiency + "\nWattage: " + wattage + "\nModularity: " + modular + "\nColor: " + color);
+        return (super.toString() + "\nEfficiency: " + efficiency + " || Wattage: " + wattage + " || Modularity: " + modular + "\n");
     }
 
     @Override
