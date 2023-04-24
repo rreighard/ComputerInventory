@@ -529,13 +529,10 @@ public class Inventory {
         }
     }
 
-//    public List getKeySet(){
-//        List<String> keys = new ArrayList<>();
-//        partHashMap.forEach((k,value) -> {
-//            keys.add(k);
-//        });
-//        return keys;
-//    }
+    public List getKey(){
+
+        return (List) partHashMap.keySet();
+    }
 
     public String search(String term){
         if(partHashMap.containsKey(term)){

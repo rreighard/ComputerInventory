@@ -1,6 +1,7 @@
 package partInv.mvc;
 
 import partInv.Inventory;
+import partInv.Part;
 import partInv.cpu;
 import partInv.gpu;
 
@@ -17,6 +18,7 @@ public class InventoryApp {
         String currentKey = "CPU1";
         String logs = "";
         List<String> keys = new ArrayList<>();
+        List<Part> invTM;
 
         InventoryAdd invAdd = new InventoryAdd();
         RecentLogModel recentLogModel = new RecentLogModel(logs);

@@ -1,8 +1,9 @@
 package partInv;
 import java.awt.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.UUID;
-public class Part implements PartInterface{
+public class Part implements PartInterface, Serializable {
     protected UUID partNum;
     protected String manufacturer;
     protected String formF;

@@ -2,7 +2,10 @@ package partInv.mvc;
 
 
 import partInv.Inventory;
+import partInv.Part;
+import partInv.mvc.InventoryTableModel;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +21,10 @@ public class InventoryController {
     private List<String> invList;
     private String curKey;
     private int num;
+    private InventoryTableModel invTM;
+    private InventoryList invObjList;
+    private JFrame invFrame;
+
 
     public InventoryController(InventoryViewEdit viewEdit, InventoryView view, InventoryViewFull viewFull, InventoryViewIndividual viewIndividual, RecentLogModel recLogModel, EditorModel editModel, InventoryAdd invAdd,
                                Inventory inv, String curKey, List<String> invList) {
@@ -31,6 +38,9 @@ public class InventoryController {
         this.invList = invList;
         this.curKey = curKey;
         this.num = num;
+        invObjList = new InventoryList();
+        invTM = new InventoryTableModel(invObjList.getInvList());
+
 
         recLogModel.setRecLogs(inv);
         view.invForm().getLogArea().setText(recLogModel.getRecLogs());
@@ -196,8 +206,14 @@ public class InventoryController {
             viewIndividual.setVisible(true);
         });
     }
-
     public int getCurrentKey(){
         return num;
     }
+
+    public List<String> getKeyList() { return invList; }
+
+    public InventoryTableModel getInvTM(){return invTM; }
+
+    public InventoryViewIndividual getViewInd() { return viewIndividual; }
+
 }

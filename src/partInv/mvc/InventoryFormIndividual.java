@@ -59,6 +59,12 @@ public class InventoryFormIndividual {
     }
 
     public void parseInvIndForm(Inventory inv, String key) {
-        this.partInfo.setText(inv.display(key));
+
+        if(inv == null){
+            this.partInfo.setText("");
+        }
+        else{
+            this.partInfo.setText(inv.display(key));
+        }
     }
 }
