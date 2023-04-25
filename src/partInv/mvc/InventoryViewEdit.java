@@ -16,4 +16,4 @@ public InventoryViewEdit(){
         }
 
 public InventoryFormEdit invFormEdit(){ return invFormEdit; }
-        }
+}

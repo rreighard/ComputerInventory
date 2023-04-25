@@ -529,9 +529,17 @@ public class Inventory {
         }
     }
 
-    public List getKey(){
+    public Object getPart(String key){
+        return partHashMap.get(key);
+    }
 
-        return (List) partHashMap.keySet();
+    public ArrayList<String> getKey(){
+
+        ArrayList<String> keys = new ArrayList<>();
+        for(String x: partHashMap.keySet()){
+            keys.add(x);
+        }
+        return keys;
     }
 
     public String search(String term){

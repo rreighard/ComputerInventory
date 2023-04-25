@@ -9,6 +9,7 @@ public class InventoryForm{
     private JButton viewIndividualBtn;
     private JButton viewFullBtn;
 
+
     public JPanel getBckgnd() {
         return bckgnd;
     }

@@ -18,7 +18,6 @@ public class InventoryApp {
         String currentKey = "CPU1";
         String logs = "";
         List<String> keys = new ArrayList<>();
-        List<Part> invTM;
 
         InventoryAdd invAdd = new InventoryAdd();
         RecentLogModel recentLogModel = new RecentLogModel(logs);
@@ -28,6 +27,9 @@ public class InventoryApp {
         InventoryViewFull viewFull = new InventoryViewFull();
         InventoryViewIndividual viewIndividual = new InventoryViewIndividual();
         Inventory inv = new Inventory();
+        InventoryList invObjList = new InventoryList(invAdd, editModel, inv);
+        InventoryTableModel invTM = new InventoryTableModel(invObjList.getInvList(), inv);
+
 
         inv.addToHMap(new cpu("AM4", "AMD", Color.BLACK, 156.99, "Shelf 2A", "AMD Ryzen 5 5600X 3.7 GHz 6-Core Processor",
                 6, 3.7F, 4.6F, 65, false));
@@ -41,10 +43,13 @@ public class InventoryApp {
                 "GeForce RTX 4070 Ti", 2310F, 2640F, 305));
         keys.add("GPU1");
 
-        InventoryController controller = new InventoryController(viewEdit, view, viewFull, viewIndividual, recentLogModel, editModel, invAdd, inv, currentKey, keys);
+        InventoryController controller = new InventoryController(viewEdit, view, viewFull, viewIndividual, recentLogModel, editModel, invAdd, inv, currentKey, keys, invTM, invObjList);
+
+        InventoryTableView invTV = new InventoryTableView(controller, inv, invAdd, editModel);
 
         currentKey = keys.get(controller.getCurrentKey());
         System.out.println(keys);
         view.setVisible(true);
+        invTV.setVisible(true);
     }
 }

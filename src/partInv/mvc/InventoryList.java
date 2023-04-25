@@ -16,32 +16,47 @@ public class InventoryList {
     ArrayList<Part> invList = new ArrayList<>();
     private String invFileName = "listOfInv.ser";
 
-    public InventoryList() {
+    public InventoryList(InventoryAdd invAdd, EditorModel editModel, Inventory inv) {
         readInvFile();
+        this.invAdd = invAdd;
+        this.editModel = editModel;
+        this.inv = inv;
 
         if (invList == null || invList.isEmpty()) {
-            createInvList();
+            for (String x : inv.getKey()) {
+                invList.add((Part) inv.getPart(x));
+            }
+            createInvList(inv, invAdd, editModel);
             writeInvList();
             readInvFile();
         }
 
-        printInvList();
+        printInvList(inv);
+
+
     }
 
-    public void addPart(InventoryAdd invTAdd) {
+    public void addPart(InventoryAdd invTAdd, EditorModel editTModel) {
         invAdd = invTAdd;
+        editModel = editTModel;
         invAdd.setVisible(true);
 
-        invList.add((Part) editModel.addEdit(inv, invAdd.invAddForm().getPartTypeFld().getText(), invAdd.invAddForm().getA1Fld().getText(), invAdd.invAddForm().getA2Fld().getText(),
-                invAdd.invAddForm().getA3Fld().getText(), invAdd.invAddForm().getA4Fld().getText(), invAdd.invAddForm().getA5Fld().getText(),
-                invAdd.invAddForm().getA6Fld().getText(), invAdd.invAddForm().getA7Fld().getText(), invAdd.invAddForm().getA8Fld().getText(),
-                invAdd.invAddForm().getA9Fld().getText(), invAdd.invAddForm().getA10Fld().getText(), invAdd.invAddForm().getA11Fld().getText()));
+        invAdd.invAddForm().getAddPartBtn().addActionListener(a -> {
+            invList.add((Part) editModel.addEdit(inv, invAdd.invAddForm().getPartTypeFld().getText(), invAdd.invAddForm().getA1Fld().getText(), invAdd.invAddForm().getA2Fld().getText(),
+                    invAdd.invAddForm().getA3Fld().getText(), invAdd.invAddForm().getA4Fld().getText(), invAdd.invAddForm().getA5Fld().getText(),
+                    invAdd.invAddForm().getA6Fld().getText(), invAdd.invAddForm().getA7Fld().getText(), invAdd.invAddForm().getA8Fld().getText(),
+                    invAdd.invAddForm().getA9Fld().getText(), invAdd.invAddForm().getA10Fld().getText(), invAdd.invAddForm().getA11Fld().getText()));
+        });
         invAdd.setVisible(false);
     }
 
-    public void removePart(int index) { invList.remove(index); }
+    public void removePart(int index) {
+        invList.remove(index);
+    }
 
-    public ArrayList<Part> getInvList() { return invList; }
+    public ArrayList<Part> getInvList() {
+        return invList;
+    }
 
     public void readInvFile() {
         FileInputStream fis = null;
@@ -76,18 +91,14 @@ public class InventoryList {
         }
     }
 
-    public void createInvList() {
-        addPart();
-        addPart();
-        addPart();
-        addPart();
+    public void createInvList(Inventory inv, InventoryAdd invAdd, EditorModel editTModel) {
 
         System.out.println("list created");
     }
 
-    public void printInvList() {
-        System.out.println("Coffee List:");
-        inv.toString();
+    public void printInvList(Inventory inv) {
+        System.out.println("Part List:");
+        invList.toString();
     }
 }
 

@@ -12,7 +12,7 @@ public class InventoryTableModel extends AbstractTableModel {
     private String[] columnNames = {"Name", "Form Factor", "Location"};
     private List<Part> invArrayList;
 
-    public InventoryTableModel(List<Part> newList){
+    public InventoryTableModel(List<Part> newList, Inventory inv){
 
         invArrayList = newList;
     }
